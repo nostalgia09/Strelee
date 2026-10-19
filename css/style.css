@@ -1,0 +1,330 @@
+/* =========================================
+   1. VARIABLES Y ESTILOS GENERALES (STREELE)
+========================================== */
+
+:root {
+  --ink: #000000;
+  --canvas-1: #f8f6f0;
+  --canvas-2: #ffffff;
+  --orange: #ff5722;
+  --purple-dark: #4a148c;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--canvas-1);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* TOPBAR */
+.topbar {
+  background: var(--canvas-2);
+  border-bottom: 2px solid var(--ink);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 32px;
+  text-decoration: none;
+  color: var(--ink);
+  letter-spacing: 1px;
+}
+
+.logo-dot {
+  color: var(--orange);
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.nav-cta {
+  background: var(--ink);
+  color: #fff !important;
+  padding: 8px 16px;
+  border: 2px solid var(--ink);
+}
+
+/* SECCIONES Y PANTALLAS */
+.pantalla {
+  display: none;
+  padding: 60px 0;
+}
+
+.pantalla.activa {
+  display: block;
+}
+
+.block-light {
+  background: var(--canvas-1);
+}
+
+.block-tan {
+  background: #eae6df;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+/* BOTONES */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: var(--canvas-2);
+  color: var(--ink);
+}
+
+/* TITULOS Y ETIQUETAS */
+.hero-title, .section-title {
+  font-family: var(--font-display);
+  font-size: 56px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero-title em {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.tag-label {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.center {
+  text-align: center;
+}
+
+.steps {
+  display: grid;
+  gap: 20px;
+}
+
+/* FAQ */
+.faq-section {
+  padding: 60px 0;
+  background: var(--canvas-2);
+  border-top: 2px solid var(--ink);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 30px auto 0 auto;
+}
+
+.faq-item {
+  border: 2px solid var(--ink);
+  margin-bottom: 12px;
+  background: var(--canvas-1);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 16px 16px 16px;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--ink);
+  color: #fff;
+  padding: 30px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  color: #fff;
+}
+
+
+/* =========================================
+   2. ESTILOS DEL PANEL ADMINISTRADOR
+========================================== */
+
+.admin-login-card {
+  max-width: 420px;
+  margin: 40px auto;
+  background: var(--canvas-2);
+  padding: 32px;
+  border: 2px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  background: #f0f0f0;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border: 2px solid var(--ink);
+  background: #fff;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th, 
+.admin-table td {
+  padding: 12px 16px;
+  border: 1px solid var(--ink);
+  vertical-align: middle;
+}
+
+.admin-table th {
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.admin-thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid var(--ink);
+}
+
+.btn-danger {
+  background: #d9534f;
+  color: #fff;
+  border: 2px solid var(--ink);
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-danger:hover {
+  background: #c9302c;
+}
+
+.alert-danger {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px;
+  border: 2px solid var(--ink);
+  margin-bottom: 16px;
+  display: none;
+}

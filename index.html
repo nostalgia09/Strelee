@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Strelee | Moda Urbana Reutilizada</title>
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       BARRA DE NAVEGACIÓN
+  ========================================== -->
+
+  <header class="topbar">
+
+    <div class="wrap topbar-inner">
+
+      <a href="index.html" class="logo">
+        STREELE<span class="logo-dot">.</span>
+      </a>
+
+      <nav class="nav">
+
+        <a href="#inicio" onclick="mostrarPantalla('inicio')">
+          Inicio
+        </a>
+
+        <a href="#catalogo" onclick="mostrarPantalla('catalogo')">
+          Catálogo
+        </a>
+
+        <a href="#nosotros">
+          Nosotros
+        </a>
+
+        <a href="#faq">
+          FAQ
+        </a>
+
+        <a href="formulario.html">
+          Personalizar
+        </a>
+
+        <a href="#admin" onclick="mostrarPantalla('adminPanel')">
+          Admin
+        </a>
+
+        <a href="login.html" class="nav-cta">
+          Mi cuenta
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       PANTALLA INICIO
+  ========================================== -->
+
+  <section id="inicio" class="pantalla activa hero block-light">
+
+    <div class="wrap hero-grid">
+
+      <div class="hero-content">
+
+        <p class="tag-label">
+          Moda Urbana & Sostenible
+        </p>
+
+        <h1 class="hero-title">
+          REUTILIZA. <em>DISEÑA.</em> VISTE ÚNICO.
+        </h1>
+
+        <p class="hero-sub">
+          Transformamos prendas recicladas en piezas exclusivas
+          de moda urbana hechas a tu medida.
+        </p>
+
+        <div class="hero-actions">
+
+          <button
+            class="btn btn-primary"
+            onclick="mostrarPantalla('catalogo')">
+            Ver Catálogo
+          </button>
+
+          <a href="formulario.html" class="btn btn-ghost">
+            Personalizar Prenda
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-tag-visual">
+
+        <div class="swing-tag">
+
+          <div class="swing-tag-hole"></div>
+
+          <p class="swing-tag-eyebrow">
+            Edición Limitada
+          </p>
+
+          <h2 class="swing-tag-main">
+            STREELE
+          </h2>
+
+          <p class="swing-tag-sub">
+            100% Hecho a Mano
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CATÁLOGO
+  ========================================== -->
+
+  <section id="catalogo" class="pantalla block-tan">
+
+    <div class="wrap">
+
+      <div class="cta-block" style="margin-bottom:32px;">
+
+        <h1 class="section-title center">
+          Catálogo Exclusivo
+        </h1>
+
+        <p class="hero-sub" style="margin:0 auto;">
+          Explora nuestras prendas intervenidas o solicita
+          un diseño propio.
+        </p>
+
+      </div>
+
+
+      <!-- FILTROS -->
+
+      <div
+        class="hero-actions"
+        style="justify-content:center; margin-bottom:40px;">
+
+        <button
+          class="btn btn-primary"
+          onclick="filtrarProductos('todos', this)">
+          Todos
+        </button>
+
+        <button
+          class="btn btn-ghost"
+          onclick="filtrarProductos('camisetas', this)">
+          Camisetas
+        </button>
+
+        <button
+          class="btn btn-ghost"
+          onclick="filtrarProductos('chaquetas', this)">
+          Chaquetas
+        </button>
+
+        <button
+          class="btn btn-ghost"
+          onclick="filtrarProductos('pantalones', this)">
+          Pantalones
+        </button>
+
+      </div>
+
+
+      <!-- CONTENEDOR DINÁMICO DE PRODUCTOS -->
+
+      <div
+        id="contenedorProductos"
+        class="steps"
+        style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+        
+        <!-- Los productos se cargan dinámicamente con JS -->
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       PANTALLA DETALLE DEL PRODUCTO
+  ========================================== -->
+
+  <section id="detalle" class="pantalla block-light">
+
+    <div class="wrap two-col">
+
+      <div>
+
+        <img
+          id="detalleImagen"
+          src=""
+          alt="Producto"
+          style="width:100%; border:2px solid var(--ink);">
+
+      </div>
+
+
+      <div>
+
+        <button
+          class="btn btn-ghost"
+          onclick="mostrarPantalla('catalogo')"
+          style="margin-bottom:20px;">
+
+          ← Volver
+
+        </button>
+
+
+        <h1 id="detalleNombre" class="hero-title">
+          Producto
+        </h1>
+
+
+        <p
+          id="detallePrecio"
+          style="font-size:24px; font-weight:bold; color:var(--orange);">
+          --
+        </p>
+
+
+        <p
+          id="detalleDescripcion"
+          class="hero-sub"
+          style="margin-top:12px;">
+          Descripción del producto.
+        </p>
+
+
+        <!-- BOTÓN WHATSAPP -->
+
+        <button
+          id="btnWhatsApp"
+          class="btn btn-primary"
+          style="width:100%; margin-top:25px;"
+          onclick="pedirPorWhatsApp()">
+
+          📱 PEDIR POR WHATSAPP
+
+        </button>
+
+
+        <a
+          href="formulario.html"
+          class="btn btn-ghost"
+          style="text-align:center; width:100%; margin-top:12px;">
+
+          ✏️ Personalizar Prenda
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       PANEL DE ADMINISTRACIÓN (NUEVA SECCIÓN)
+  ========================================== -->
+
+  <section id="adminPanel" class="pantalla block-light">
+
+    <div class="wrap">
+
+      <!-- FORMULARIO DE ACCESO (ADMIN LOGIN) -->
+      <div id="adminAuth" class="admin-login-card">
+
+        <h2 class="section-title center" style="margin-bottom:8px;">Acceso Admin</h2>
+
+        <p class="hero-sub center" style="margin-bottom:24px; font-size:14px;">
+          Ingresa tus credenciales para administrar el catálogo.
+        </p>
+
+        <div id="loginError" class="alert-danger">
+          Usuario o contraseña incorrectos.
+        </div>
+
+        <form onsubmit="autenticarAdmin(event)">
+
+          <div class="form-group">
+            <label for="adminUser">Usuario</label>
+            <input type="text" id="adminUser" class="form-control" required placeholder="Ej: admin">
+          </div>
+
+          <div class="form-group">
+            <label for="adminPass">Contraseña</label>
+            <input type="password" id="adminPass" class="form-control" required placeholder="••••••••">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;">
+            Ingresar al Panel
+          </button>
+
+        </form>
+
+      </div>
+
+
+      <!-- DASHBOARD ADMINISTRADOR (OCULTO POR DEFECTO) -->
+      <div id="adminDashboard" style="display:none;">
+
+        <div class="admin-header">
+
+          <div>
+            <span class="tag-label">PANEL DE CONTROL</span>
+            <h1 class="hero-title" style="margin:0;">Gestión de Catálogo</h1>
+          </div>
+
+          <button class="btn btn-ghost" onclick="cerrarSesionAdmin()">
+            🔒 Cerrar Sesión
+          </button>
+
+        </div>
+
+        <div class="two-col" style="align-items: flex-start;">
+
+          <!-- FORMULARIO DE AGREGAR PRODUCTO -->
+          <div class="admin-login-card" style="margin:0; max-width:100%;">
+
+            <h3 style="font-family:var(--font-display); font-size:24px; margin-top:0;">
+              Agregar Nuevo Producto
+            </h3>
+
+            <form onsubmit="guardarProducto(event)">
+
+              <div class="form-group">
+                <label for="prodNombre">Nombre de la Prenda</label>
+                <input type="text" id="prodNombre" class="form-control" required placeholder="Ej: Oversized Hoodie">
+              </div>
+
+              <div class="form-group">
+                <label for="prodCategoria">Categoría</label>
+                <select id="prodCategoria" class="form-control" required>
+                  <option value="camisetas">Camisetas</option>
+                  <option value="chaquetas">Chaquetas</option>
+                  <option value="pantalones">Pantalones</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="prodPrecio">Precio</label>
+                <input type="text" id="prodPrecio" class="form-control" required placeholder="Ej: $85.000">
+              </div>
+
+              <div class="form-group">
+                <label for="prodImagen">URL de la Imagen</label>
+                <input type="url" id="prodImagen" class="form-control" required placeholder="https://images.unsplash.com/...">
+              </div>
+
+              <div class="form-group">
+                <label for="prodDescripcion">Descripción</label>
+                <textarea id="prodDescripcion" class="form-control" rows="3" required placeholder="Detalles de la prenda e intervención..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;">
+                + Añadir al Catálogo
+              </button>
+
+            </form>
+
+          </div>
+
+
+          <!-- TABLA DE PRODUCTOS -->
+          <div>
+
+            <h3 style="font-family:var(--font-display); font-size:24px; margin-top:0;">
+              Productos Publicados
+            </h3>
+
+            <div class="table-responsive">
+
+              <table class="admin-table">
+
+                <thead>
+                  <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+
+                <tbody id="tablaAdminProductos">
+                  <!-- Filas generadas dinámicamente -->
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       SOBRE NOSOTROS
+  ========================================== -->
+
+  <section
+    id="nosotros"
+    class="block-light"
+    style="border-top:2px solid var(--ink);">
+
+    <div class="wrap two-col">
+
+      <div>
+
+        <p class="tag-label">
+          Nuestra Filosofía
+        </p>
+
+        <h2 class="hero-title">
+          MODA CON <em>PROPÓSITO</em> Y SIN DESPERDICIO.
+        </h2>
+
+        <p class="hero-sub">
+
+          En Streele rescatamos prendas en desuso y las
+          transformamos a mano en piezas únicas de ropa urbana.
+          Cada diseño busca reducir el desperdicio textil y
+          ofrecer prendas diferentes.
+
+        </p>
+
+        <a href="formulario.html" class="btn btn-primary">
+          Empieza tu Diseño
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <div
+          style="
+          background:var(--canvas-2);
+          border:2px solid var(--ink);
+          padding:32px;
+          box-shadow:6px 6px 0 var(--ink);
+          ">
+
+          <h3
+            style="
+            font-family:var(--font-display);
+            font-size:28px;
+            margin-top:0;
+            ">
+
+            ¿Por qué elegir Streele?
+
+          </h3>
+
+
+          <ul
+            style="
+            list-style:none;
+            padding:0;
+            margin:0;
+            display:flex;
+            flex-direction:column;
+            gap:16px;
+            ">
+
+
+            <li
+              style="
+              display:flex;
+              gap:12px;
+              align-items:flex-start;
+              ">
+
+              <span
+                style="
+                background:var(--orange);
+                border:1px solid var(--ink);
+                padding:2px 8px;
+                font-weight:bold;
+                font-size:12px;
+                ">
+
+                01
+
+              </span>
+
+              <span>
+                <strong>100% Upcycling:</strong>
+                Reutilización de textiles para minimizar
+                el desperdicio.
+              </span>
+
+            </li>
+
+
+            <li
+              style="
+              display:flex;
+              gap:12px;
+              align-items:flex-start;
+              ">
+
+              <span
+                style="
+                background:var(--orange);
+                border:1px solid var(--ink);
+                padding:2px 8px;
+                font-weight:bold;
+                font-size:12px;
+                ">
+
+                02
+
+              </span>
+
+              <span>
+                <strong>Diseño Exclusivo:</strong>
+                Cada pieza busca tener un estilo propio.
+              </span>
+
+            </li>
+
+
+            <li
+              style="
+              display:flex;
+              gap:12px;
+              align-items:flex-start;
+              ">
+
+              <span
+                style="
+                background:var(--orange);
+                border:1px solid var(--ink);
+                padding:2px 8px;
+                font-weight:bold;
+                font-size:12px;
+                ">
+
+                03
+
+              </span>
+
+              <span>
+                <strong>Trabajo Artesanal:</strong>
+                Intervención y personalización de prendas.
+              </span>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       PREGUNTAS FRECUENTES
+  ========================================== -->
+
+  <section
+    id="faq"
+    class="faq-section">
+
+    <div class="wrap">
+
+      <div class="faq-header">
+
+        <span class="tag-label">
+          ¿NECESITAS AYUDA?
+        </span>
+
+        <h2 class="faq-title">
+          Preguntas frecuentes
+        </h2>
+
+        <p class="faq-description">
+
+          Encuentra respuestas a las preguntas más comunes
+          sobre nuestros productos, pedidos y personalizaciones.
+
+        </p>
+
+      </div>
+
+
+      <div class="faq-container">
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            ¿Qué es Strelee?
+
+            <span class="faq-icon">+</span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+
+              Strelee es una tienda de ropa urbana que transforma
+              prendas y crea diseños personalizados para expresar
+              tu estilo y personalidad.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            ¿Puedo personalizar una prenda?
+
+            <span class="faq-icon">+</span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+
+              Sí. Puedes elegir una prenda y solicitar diferentes
+              diseños, colores y detalles para crear una pieza única.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            ¿Las prendas utilizan materiales reciclados?
+
+            <span class="faq-icon">+</span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+
+              Strelee busca darle una segunda vida a prendas de
+              segunda mano y utilizar materiales de calidad,
+              promoviendo prácticas de consumo responsable.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            ¿Cómo puedo realizar un pedido?
+
+            <span class="faq-icon">+</span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+
+              Puedes seleccionar un producto del catálogo y
+              pulsar el botón "Pedir por WhatsApp". Se abrirá
+              WhatsApp con la información del producto preparada
+              para enviar.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            ¿Cuánto tarda una personalización?
+
+            <span class="faq-icon">+</span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+
+              El tiempo puede variar dependiendo del tipo de
+              prenda y del diseño solicitado. Te informaremos
+              el tiempo estimado antes de confirmar tu pedido.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="footer">
+
+    <div class="wrap footer-inner">
+
+      <span class="logo footer-logo">
+        STREELE<span class="logo-dot">.</span>
+      </span>
+
+      <p class="footer-slogan">
+        © 2026 Streele. Ropa urbana reutilizada.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script>
+
+    /* -----------------------------------------
+       BASE DE DATOS EN LOCALSTORAGE (CATÁLOGO)
+    ------------------------------------------ */
+
+    const productosIniciales = [
+      {
+        id: 1,
+        nombre: 'Street Basic',
+        categoria: 'camisetas',
+        precio: '$65.000',
+        descripcion: 'Camiseta urbana reutilizada y personalizada.',
+        imagen: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80'
+      },
+      {
+        id: 2,
+        nombre: 'Urban Jacket',
+        categoria: 'chaquetas',
+        precio: '$150.000',
+        descripcion: 'Chaqueta reutilizada con detalles urbanos.',
+        imagen: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80'
+      },
+      {
+        id: 3,
+        nombre: 'Reborn Jeans',
+        categoria: 'pantalones',
+        precio: '$110.000',
+        descripcion: 'Jeans reutilizados y personalizados.',
+        imagen: 'https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=80'
+      }
+    ];
+
+    function obtenerProductos() {
+      const db = localStorage.getItem('streele_productos');
+      if (!db) {
+        localStorage.setItem('streele_productos', JSON.stringify(productosIniciales));
+        return productosIniciales;
+      }
+      return JSON.parse(db);
+    }
+
+    function guardarProductosEnStorage(productos) {
+      localStorage.setItem('streele_productos', JSON.stringify(productos));
+      renderizarCatalogo();
+      renderizarTablaAdmin();
+    }
+
+
+    /* -----------------------------------------
+       VARIABLES DEL PRODUCTO SELECCIONADO
+    ------------------------------------------ */
+
+    let productoSeleccionado = {
+      nombre: "",
+      categoria: "",
+      precio: "",
+      descripcion: ""
+    };
+
+
+    /* -----------------------------------------
+       CAMBIAR DE PANTALLA Y VERIFICACIÓN
+    ------------------------------------------ */
+
+    function mostrarPantalla(nombre) {
+
+      document
+        .querySelectorAll(".pantalla")
+        .forEach(p => p.style.display = "none");
+
+      const pantalla = document.getElementById(nombre);
+
+      if (pantalla) {
+        pantalla.style.display = "block";
+      }
+
+      /* Control de vista Admin */
+      if (nombre === 'adminPanel') {
+        const esAdmin = sessionStorage.getItem('streele_admin_auth');
+        if (esAdmin === 'true') {
+          document.getElementById('adminAuth').style.display = 'none';
+          document.getElementById('adminDashboard').style.display = 'block';
+          renderizarTablaAdmin();
+        } else {
+          document.getElementById('adminAuth').style.display = 'block';
+          document.getElementById('adminDashboard').style.display = 'none';
+        }
+      }
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    /* -----------------------------------------
+       RENDERIZAR CATÁLOGO PÚBLICO
+    ------------------------------------------ */
+
+    function renderizarCatalogo() {
+      const productos = obtenerProductos();
+      const contenedor = document.getElementById('contenedorProductos');
+      contenedor.innerHTML = '';
+
+      productos.forEach(p => {
+        const tarjeta = document.createElement('article');
+        tarjeta.className = 'step producto';
+        tarjeta.dataset.categoria = p.categoria;
+        tarjeta.style.cssText = 'background:#fff; padding:16px; border:2px solid var(--ink);';
+
+        tarjeta.innerHTML = `
+          <img src="${p.imagen}" alt="${p.nombre}" style="width:100%; height:220px; object-fit:cover;">
+          <h3 style="margin-top:12px;">${p.nombre}</h3>
+          <p style="color:var(--purple-dark); font-weight:600;">${p.precio}</p>
+          <button class="btn btn-primary" style="width:100%; margin-top:12px;">
+            Ver Detalle
+          </button>
+        `;
+
+        tarjeta.querySelector('button').onclick = () => verProducto(p.nombre, p.categoria, p.precio, p.descripcion, p.imagen);
+        contenedor.appendChild(tarjeta);
+      });
+    }
+
+
+    /* -----------------------------------------
+       AUTENTICACIÓN ADMINISTRADOR
+    ------------------------------------------ */
+
+    function autenticarAdmin(e) {
+      e.preventDefault();
+      const user = document.getElementById('adminUser').value;
+      const pass = document.getElementById('adminPass').value;
+
+      /* Credenciales estáticas demostrativas */
+      if (user === 'admin' && pass === '1234') {
+        sessionStorage.setItem('streele_admin_auth', 'true');
+        document.getElementById('loginError').style.display = 'none';
+        document.getElementById('adminUser').value = '';
+        document.getElementById('adminPass').value = '';
+        mostrarPantalla('adminPanel');
+      } else {
+        document.getElementById('loginError').style.display = 'block';
+      }
+    }
+
+    function cerrarSesionAdmin() {
+      sessionStorage.removeItem('streele_admin_auth');
+      mostrarPantalla('adminPanel');
+    }
+
+
+    /* -----------------------------------------
+       GESTIÓN DEL CATÁLOGO (AGREGAR / ELIMINAR)
+    ------------------------------------------ */
+
+    function renderizarTablaAdmin() {
+      const productos = obtenerProductos();
+      const tbody = document.getElementById('tablaAdminProductos');
+      tbody.innerHTML = '';
+
+      productos.forEach(p => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><img src="${p.imagen}" class="admin-thumb" alt="${p.nombre}"></td>
+          <td><strong>${p.nombre}</strong></td>
+          <td style="text-transform: capitalize;">${p.categoria}</td>
+          <td>${p.precio}</td>
+          <td>
+            <button class="btn-danger" onclick="eliminarProducto(${p.id})">Eliminar</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function guardarProducto(e) {
+      e.preventDefault();
+
+      const productos = obtenerProductos();
+      const nuevoProducto = {
+        id: Date.now(),
+        nombre: document.getElementById('prodNombre').value,
+        categoria: document.getElementById('prodCategoria').value,
+        precio: document.getElementById('prodPrecio').value,
+        imagen: document.getElementById('prodImagen').value,
+        descripcion: document.getElementById('prodDescripcion').value
+      };
+
+      productos.push(nuevoProducto);
+      guardarProductosEnStorage(productos);
+
+      e.target.reset();
+      alert('Producto agregado correctamente.');
+    }
+
+    function eliminarProducto(id) {
+      if (confirm('¿Estás seguro de eliminar este producto del catálogo?')) {
+        let productos = obtenerProductos();
+        productos = productos.filter(p => p.id !== id);
+        guardarProductosEnStorage(productos);
+      }
+    }
+
+
+    /* -----------------------------------------
+       FILTRAR PRODUCTOS EN EL CATÁLOGO
+    ------------------------------------------ */
+
+    function filtrarProductos(categoria, boton) {
+
+      document
+        .querySelectorAll(".producto")
+        .forEach(p => {
+
+          if (
+            categoria === "todos" ||
+            p.dataset.categoria === categoria
+          ) {
+
+            p.style.display = "block";
+
+          } else {
+
+            p.style.display = "none";
+
+          }
+
+        });
+
+    }
+
+
+    /* -----------------------------------------
+       MOSTRAR PRODUCTO DETALLE
+    ------------------------------------------ */
+
+    function verProducto(
+      nombre,
+      categoria,
+      precio,
+      descripcion,
+      imagen
+    ) {
+
+      productoSeleccionado.nombre = nombre;
+      productoSeleccionado.categoria = categoria;
+      productoSeleccionado.precio = precio;
+      productoSeleccionado.descripcion = descripcion;
+
+      document.getElementById("detalleNombre").textContent = nombre;
+      document.getElementById("detallePrecio").textContent = precio;
+      document.getElementById("detalleDescripcion").textContent = descripcion;
+      document.getElementById("detalleImagen").src = imagen;
+
+      mostrarPantalla("detalle");
+
+    }
+
+
+    /* -----------------------------------------
+       PEDIDO POR WHATSAPP
+    ------------------------------------------ */
+
+    function pedirPorWhatsApp() {
+
+      const numeroWhatsApp = "573124182736";
+
+      const mensaje =
+`¡Hola, Strelee! 👋
+
+Quiero realizar un pedido.
+
+👕 Producto: ${productoSeleccionado.nombre}
+
+📂 Categoría: ${productoSeleccionado.categoria}
+
+💰 Precio publicado: ${productoSeleccionado.precio}
+
+📝 Descripción:
+${productoSeleccionado.descripcion}
+
+Me gustaría recibir información para realizar el pedido y conocer la disponibilidad.
+
+¡Gracias!`;
+
+      const enlace =
+        "https://wa.me/" +
+        numeroWhatsApp +
+        "?text=" +
+        encodeURIComponent(mensaje);
+
+      window.open(enlace, "_blank");
+
+    }
+
+
+    /* -----------------------------------------
+       PREGUNTAS FRECUENTES
+    ------------------------------------------ */
+
+    document
+      .querySelectorAll(".faq-question")
+      .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+          const item = button.parentElement;
+
+          item.classList.toggle("active");
+
+        });
+
+      });
+
+
+    /* -----------------------------------------
+       INICIALIZACIÓN
+    ------------------------------------------ */
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      renderizarCatalogo();
+      mostrarPantalla("inicio");
+
+    });
+
+  </script>
+
+</body>
+
+</html>
